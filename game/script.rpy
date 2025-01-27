@@ -1,33 +1,48 @@
-﻿# The script of the game goes in this file.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+init python:
+    from math import sqrt
 
-define e = Character("Eileen")
-
-
-# The game starts here.
+# Déclarez les personnages utilisés dans le jeu.
+define chad = Character('???', color="#d4d4d4")
+define mc = Character("[playername]",color="#0084ff")
 
 label start:
+    play music "character_creation.mp3" fadein 2.0
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    camera:
+        perspective True
 
-    scene bg room
+    show lock_avatar at center with fade:
+        zpos -200
+        warp sqrt 3.5 zpos 0
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    chad "Salut. Tu es en ce moment dans un dimension qui va te\npermettre de rejondre l'autre monde."
+    chad "Et pour le rejoindre, tu vas devoir me donner\nquelques informations sur ta personne."
+    
+    chad "Quel est ton nom ?"
 
-    show eileen happy
+    # input qui donne le nom du joueur 
+    python :
+        while True :
+            playername = renpy.input("Ton nom (sans espaces, 10 charactères max):")
+            
+            if playername != "" and playername not in " " and len(playername) < 10:
+                break
 
-    # These display lines of dialogue.
+    show lock_avatar :
+        warp sqrt 0.5 xpos 350
 
-    e "You've created a new Ren'Py game."
+    chad "Tu viens de rentrer ton nom, merci beaucoup."
+    chad "Maintenant, je vais utiliser ma PUISSANCE pour\nte tp dans l'autre monde."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    menu :
+        chad "T'es prêt du coup ?"
 
-    # This ends the game.
+        "Oui." :
+            chad "D'accord. Prépare toi."
+        
+        "Non" :
+            chad "You ARE going to BRAZILLLL !!!"
+# a reecrire un jour car en dessous de nos standards ( Note de Ramker : Tkt je gére )
 
     return
