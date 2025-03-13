@@ -28,11 +28,11 @@ define config.check_conflicting_properties = True
 define gui.accent_color = '#cccc00'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#f50000'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#ffffff'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#e0e066'
@@ -63,7 +63,7 @@ define gui.text_font = "DejaVuSans.ttf"
 define gui.name_text_font = "DejaVuSans.ttf"
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "MGS2.ttf"
 
 ## The size of normal dialogue text.
 define gui.text_size = 33
@@ -87,8 +87,8 @@ define gui.title_text_size = 75
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/main_menu.png"
-define gui.game_menu_background = "gui/game_menu.png"
+define gui.main_menu_background = "gui/mewinggear1.png"
+define gui.game_menu_background = "gui/mewinggear1.png"
 
 
 ## Dialogue ####################################################################
